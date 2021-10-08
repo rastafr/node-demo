@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+  redis:
+    container_name: redis-backend
+    image: 'redis:alpine'
+    volumes:
+      - db-data:/foo
+
+volumes:
+  db-data:
